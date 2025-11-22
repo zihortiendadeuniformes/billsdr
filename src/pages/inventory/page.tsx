@@ -1450,33 +1450,33 @@ export default function InventoryPage() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-        <p className="ml-4 text-gray-600">Cargando módulo de inventario...</p>
+      <div className="flex items-center justify-center min-h-[50vh]">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500"></div>
+        <p className="ml-4 text-slate-400">Cargando módulo de inventario...</p>
       </div>
     );
   }
 
   return (
-    <div className="p-6">
+    <div className="space-y-6">
       {/* Header con botón de regreso */}
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
           <button
             onClick={() => navigate('/dashboard')}
-            className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-lg transition-colors"
+            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/80 border border-slate-700 text-slate-200 hover:border-purple-500/70 hover:bg-slate-900 transition-colors"
           >
             <i className="ri-arrow-left-line text-lg"></i>
             <span>Volver al Inicio</span>
           </button>
-          <div className="h-6 w-px bg-gray-300"></div>
-          <h1 className="text-2xl font-bold text-gray-900">Gestión de Inventario</h1>
+          <div className="h-6 w-px bg-slate-700"></div>
+          <h1 className="text-2xl font-bold text-slate-50">Gestión de Inventario</h1>
         </div>
       </div>
 
       {/* Tabs Navigation */}
-      <div className="border-b border-gray-200 mb-6">
-        <nav className="-mb-px flex space-x-8">
+      <div className="rounded-2xl border border-slate-800 bg-slate-950/80 px-2 sm:px-4 pt-2 pb-1">
+        <nav className="-mb-px flex space-x-4 overflow-x-auto scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-transparent">
           {[
             { id: 'dashboard', label: 'Dashboard', icon: 'ri-dashboard-line' },
             { id: 'products', label: 'Productos', icon: 'ri-box-3-line' },
@@ -1489,8 +1489,8 @@ export default function InventoryPage() {
               onClick={() => setActiveTab(tab.id)}
               className={`flex items-center gap-2 py-2 px-1 border-b-2 font-medium text-sm whitespace-nowrap ${
                 activeTab === tab.id
-                  ? 'border-blue-500 text-blue-600'
-                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                  ? 'border-purple-500 text-purple-300'
+                  : 'border-transparent text-slate-400 hover:text-slate-100 hover:border-slate-600'
               }`}
             >
               <i className={tab.icon}></i>
